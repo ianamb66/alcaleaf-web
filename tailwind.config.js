@@ -1,17 +1,10 @@
 /** @type {import('tailwindcss').Config} */
 export default {
+  darkMode: ["class"],
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
       fontFamily: {
-        serif: [
-          "ui-serif",
-          "Georgia",
-          "Cambria",
-          '"Times New Roman"',
-          "Times",
-          "serif",
-        ],
         sans: [
           "ui-sans-serif",
           "system-ui",
@@ -22,6 +15,16 @@ export default {
           "Arial",
           '"Apple Color Emoji"',
           '"Segoe UI Emoji"',
+        ],
+        mono: [
+          "ui-monospace",
+          "SFMono-Regular",
+          "Menlo",
+          "Monaco",
+          "Consolas",
+          '"Liberation Mono"',
+          '"Courier New"',
+          "monospace",
         ],
       },
       colors: {
@@ -39,27 +42,22 @@ export default {
           950: "#102319",
         },
       },
+      borderRadius: {
+        card: "28px",
+      },
       boxShadow: {
-        glass: "0 10px 30px rgba(0,0,0,0.35)",
+        soft: "0 10px 30px rgba(0,0,0,0.12)",
       },
       keyframes: {
         fadeInUp: {
-          "0%": { opacity: 0, transform: "translateY(12px)" },
+          "0%": { opacity: 0, transform: "translateY(10px)" },
           "100%": { opacity: 1, transform: "translateY(0px)" },
-        },
-        floatSlow: {
-          "0%, 100%": { transform: "translateY(0px)" },
-          "50%": { transform: "translateY(-6px)" },
         },
       },
       animation: {
-        "fade-in-up": "fadeInUp 700ms ease-out both",
-        "float-slow": "floatSlow 4s ease-in-out infinite",
+        "fade-in-up": "fadeInUp 550ms ease-out both",
       },
     },
   },
-  plugins: [
-    require("@tailwindcss/forms"),
-    require("@tailwindcss/typography"),
-  ],
+  plugins: [require("@tailwindcss/forms"), require("@tailwindcss/typography")],
 };

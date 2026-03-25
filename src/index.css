@@ -11,7 +11,7 @@ body {
   height: 100%;
 }
 
-/* Small, cheap animations (avoid heavy blur + bounce loops) */
+/* Respect OS and avoid expensive motion */
 @media (prefers-reduced-motion: reduce) {
   * {
     animation-duration: 0.001ms !important;
